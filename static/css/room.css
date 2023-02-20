@@ -1,0 +1,54 @@
+#footer {
+	position: relative;
+	top: 85%;
+}
+
+#t {
+	text-align: center;
+	height: 70px;
+	width: 50%;
+	font-size: 65px; 
+}
+
+#t:focus {
+	color: white;
+	background-color: black;
+}
+
+#sc {
+	position:relative;
+	text-align:center;
+	top:15%;
+	font-size: 2vw;
+}
+
+#f {
+	position:relative;
+	text-align:center;
+	top:25%;
+}
+
+#btns{
+	position:relative;
+	text-align:center;
+	top:35%;
+}
+
+.b{
+	background-color: white;
+	border-color: black;  
+}
+.b:hover{
+	background-color: grey;
+}
+
+
+#out {
+	font-size: 1.7vw;
+}
+
+#banner{
+  text-align:center;
+  background-color:black;
+  color:white;
+}
