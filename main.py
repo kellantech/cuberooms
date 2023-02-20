@@ -7,12 +7,19 @@ import scramble
 clib = cppimport.imp("clib")
 
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='', 
+            static_folder='static',)
 sapp = SocketIO(app)
+
+@app.route("/room")
+def room():
+	return render_template("room.html")
 
 @app.route("/")
 def index():
 	return render_template("index.html")
+
 
 @sapp.on('getIDR')
 def connect(d):
