@@ -28,14 +28,18 @@ scramble_5x5 = lambda l=60: scramble_fm(_s4,l)
 _rcn = lambda: random.randrange(0,6)
 _rcs = lambda: random.choice(["+","-"])
 def _rpn(pins= ["UR","UL","DR","DL"],mods=['']):
-  np = random.randrange(0,len(pins)+1)
+  np = random.randrange(0,len(pins))
   po = ""
-  for _ in range(np):
-    
+  u = []
+  num = 0
+  while num <= np:
     p = random.choice(pins)
-    po += p + random.choice(mods) +" "
-    ind = pins.index(p)
-    del pins[ind]
+    if p in u:
+      pass
+    else:
+      po += p + random.choice(mods) +" "
+      num += 1
+      u.append(p)
   return po
 
 
