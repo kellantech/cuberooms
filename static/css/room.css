@@ -1,12 +1,12 @@
-#footer {
+.footer {
 	position: relative;
-	top: 85%;
+	top: 80%;
 }
 
 #t {
 	text-align: center;
 	height: 70px;
-	width: 50%;
+	width: 40%;
 	font-size: 65px; 
 }
 
@@ -18,25 +18,26 @@
 #sc {
 	position:relative;
 	text-align:center;
-	top:15%;
 	font-size: 2vw;
 }
 
 #f {
 	position:relative;
 	text-align:center;
-	top:25%;
+	top:10%;
 }
 
 #btns{
 	position:relative;
 	text-align:center;
-	top:35%;
+	top:20%;
+  
 }
 
 .b{
 	background-color: white;
 	border-color: black;  
+  height:5vh;
 }
 .b:hover{
 	background-color: grey;
@@ -51,4 +52,7 @@
   text-align:center;
   background-color:black;
   color:white;
+}
+#gnl{
+  text-align:right;
 }
