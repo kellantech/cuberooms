@@ -1,4 +1,75 @@
-welcome to index!
+<link rel="stylesheet" href="/css/index.css">
+
+<div style="text-align:center;">
+<h1>CubeRooms</h1><br>
+<h3>Cube together, even at a distance</h3>
+
+<button id="o1" class="lb">join a room</button> 
+<button id="o2" class="lb">create a room</button>
 
 
-<a href="/room">join or create a room</a>
+</div>
+  <div class="b" id="b0">
+        <div class="p">
+            <button class="x" id="x0">&times;</button>
+            <div class="t">
+                <h1>Join a room</h1>
+                <form class="f" action="/room">
+                    <input name="ID" placeholder="room id" id="inid" class="inp">
+                    <input type="submit" value="join" class="subm">
+                </form>
+                
+            </div>
+
+        </div>
+        
+    </div>
+
+
+  <div class="b" id="b1">
+        <div class="p">
+            <button class="x" id="x1">&times;</button>
+            
+            <div class="t">
+                <h1>create a room</h1>
+                <form class="f2" action="/room">
+                    <input name="event" placeholder="event" id="event" class="inp">
+                  <input name="new" style="display:none;" value="Y">
+                    <input type="submit" value="create" class="subm">
+                </form>
+            </div>
+
+        </div>
+        
+        
+    </div>
+
+
+
+
+<script>
+        document.getElementById("x0").addEventListener("click", () => {
+            document.getElementById("b0").style.display = "none"
+
+        })
+        
+        document.getElementById("o1").addEventListener("click", () => {
+            document.getElementById("b0").style.display = "block"
+
+
+        })
+        
+        
+        
+document.getElementById("x1").addEventListener("click", () => {
+            document.getElementById("b1").style.display = "none"
+
+        })
+        
+        document.getElementById("o2").addEventListener("click", () => {
+            document.getElementById("b1").style.display = "block"
+
+        })
+
+
+</script>
