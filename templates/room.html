@@ -1,12 +1,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/css/room.css">
 <h1 id="banner">CubeRooms</h1>
-<div id="footer">
+<div class="footer"><div id="footer"></div>
+<div id="gnl"><button class="b" id='gl'>copy link</button></div>
 </div>
 <p id="sc"></p>
 
 
 <script type="text/javascript" charset="utf-8">
+
 	window.scramble = ""
 	
   window.user_name = prompt("Hello. Please enter your name")
@@ -35,11 +37,22 @@
 	var ul =new  URLSearchParams(location.search)
 	if (ul.get("ID") == "" || ul.get("ID") == null){
 		window.focus()
+    if (ul.get("new") != "" && ul.get("new") != null){
+      uip = "N"
+    }
+    else{
 		var uip = prompt("N for new room, or J to join an exsisting room")
+    }
 		if (uip == "N"){
 			window.id = Math.round(Math.random()*100000)
 			socket.emit("getIDR",{"data":window.id})
-			window.event = prompt("Event: ")
+      if (ul.get("event") == "" || ul.get("event")  ==null)
+      {
+        window.event = prompt("Event: ")
+      }
+      else{
+        window.event = ul.get("event")
+      }
 			socket.emit('setEVN',{id:window.id,evn:window.event})
 			document.getElementById("footer").innerHTML = (`room ID: ${window.id}`)
 			
@@ -56,7 +69,11 @@
 		
 	}
 
-	
+	document.getElementById("gl").addEventListener("click",(e)=>{
+    navigator.clipboard.writeText(`${window.location.href.split('?')[0]}?ID=${window.id}`);
+    alert("link copied")
+
+  })
 	socket.on("retupdate",function(msg) {
 		inid = msg[1]
 		console.log(msg)
