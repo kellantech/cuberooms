@@ -21,10 +21,6 @@ def index():
 	return render_template("index.html")
 
 
-@sapp.on('getIDR')
-def connect(d):
-	r = d["data"]
-	print(f"USED ID {r}")
 	
 @sapp.on('setEVN')
 def sevn(d):
@@ -52,6 +48,11 @@ def handle_nr(data):
 	emit("newscramb",[scr,d],broadcast=True)
 
 
+@sapp.on("chatR")
+def handle_chatr(data):
+	d = int(data['id'])
+	msg = data["msg"]
+	emit("chat",[msg,d], broadcast=True)
 
 
 
