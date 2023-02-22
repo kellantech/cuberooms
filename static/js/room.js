@@ -35,7 +35,6 @@
     }
 		if (uip == "N"){
 			window.id = Math.round(Math.random()*100000)
-			socket.emit("getIDR",{"data":window.id})
       if (ul.get("event") == "" || ul.get("event")  ==null)
       {
         window.event = prompt("Event: ")
@@ -49,14 +48,12 @@
 		}
 		else if (uip == "J"){
 			window.id = prompt("Please enter the room ID")
-			
 			document.getElementById("footer").innerHTML = (`room ID: ${window.id}`)
 		}
 	}
 	else{
 		
 	 window.id =ul.get("ID")
-		
 	}
 
 	document.getElementById("gl").addEventListener("click",(e)=>{
@@ -77,7 +74,15 @@
 		}
 	})
 	
-	
+	socket.on("chat",function(s) {
+		if (s[1] == window.id){
+      newmsg(s[0])
+			alert(chat);
+		}
+	})
+  function schat(msg){
+    socket.emit("chatR",{id:window.id,msg:msg})
+  }
 	function cl(){
 		var socket = io();
 		socket.on('connect', function() {
