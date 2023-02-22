@@ -1,14 +1,15 @@
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/css/room.css">
 <h1 id="banner">CubeRooms</h1>
 <div class="footer"><div id="footer"></div>
 <div id="gnl"><button class="b" id='gl'>copy link</button></div>
 </div>
+<div id="main" class="itm">
 <p id="sc"></p>
 
-
-<script type="text/javascript" src="/js/room.js">
-</script>
+<script type="text/javascript" src="/js/chat.js" ></script>
+<script type="text/javascript" src="/js/room.js"></script>
 
 <form name='f' id="f">
 	<input name="t" id="t" autocomplete="off">
@@ -34,3 +35,21 @@
 </p>
 
 
+</div>
+
+<div id="chat" class='itm'>
+  <form id='chatbox' style="">
+    <input id="cin">
+    <input type="submit">
+  </form>
+</div>
+
+
+<script>
+  document.getElementById("chatbox").addEventListener("submit",(ev)=>{
+    schat(document.getElementById("cin").value)
+    ev.preventDefault();
+    return false;   
+
+  })
+</script>
