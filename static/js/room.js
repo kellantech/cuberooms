@@ -73,15 +73,26 @@
 			document.getElementById("sc").innerHTML = s[0];
 		}
 	})
-	
+	window.onload = ()=>{
 	socket.on("chat",function(s) {
 		if (s[1] == window.id){
       newmsg(s[0])
-			alert(chat);
+      document.getElementById('chatm').innerHTML = ""
+      for(var iterc = 0;iterc<chat.length;iterc++){
+        
+			document.getElementById('chatm').innerHTML += chat[iterc] + "<br>"
+      }
 		}
 	})
+  }
   function schat(msg){
-    socket.emit("chatR",{id:window.id,msg:msg})
+    if (msg.value !="")
+    {
+      var v = window.user_name + ": " +msg.value
+    
+      socket.emit("chatR",{id:window.id,msg:v})
+      msg.value = ""
+    }
   }
 	function cl(){
 		var socket = io();
