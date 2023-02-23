@@ -1,6 +1,6 @@
 chat = []
 
 function newmsg(dat){
-  chat.unshift(dat)
+  chat.push(dat)
   if (chat.length > 4){chat.shift()}
 }
