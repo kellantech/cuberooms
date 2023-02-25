@@ -53,8 +53,18 @@ def scramble_clock():
       continue
     res += pin + str(_rcn()) + _rcs() + " "
   return res + _rpn()
-  
 
+
+def scramble_megaminx():
+  res = ""
+  for _ in range(7):
+    res += scramble_fm(["R","D"],10,["--","++"])
+    if res.split(" ")[-2][-1] == "-":
+      res += "U'"
+    else:
+      res += "U"
+    res += "<br>"
+  return res
 
 scramble_pyraminx = lambda l=9: scramble_fm(["R","L","U","B"],l,["","'"]) + _rpn(["r","b",'u','l'],["","\'"])
 
@@ -71,4 +81,5 @@ scrambled = {"3x3":scramble_3x3,\
 						 "pyraminx":scramble_pyraminx,\
 						 "skewb":scramble_skewb,\
 						 "clock":scramble_clock,\
-						 "3bld": scramble_3bld}
+						 "3bld": scramble_3bld,\
+              "megaminx":scramble_megaminx}
