@@ -33,8 +33,18 @@
             <div class="t">
                 <h1>create a room</h1>
                 <form class="f2" action="/room">
-                    <input name="event" placeholder="event" id="event" class="inp">
+                <select name="event" id="event" class="inp">
+                    <option value="3x3">3x3</option>
+                    <option value="2x2">2x2</option>
+                    <option value="4x4">4x4</option>
+                    <option value="5x5">5x5</option>
+                    <option value="pyraminx">pyraminx</option>
+                    <option value="skewb">skewb</option>
+                    <option value="clock">clock</option>
+                    <option value="3bld">3bld</option>
+                </select>
                   <input name="new" style="display:none;" value="Y">
+
                     <input type="submit" value="create" class="subm">
                 </form>
             </div>
