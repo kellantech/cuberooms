@@ -60,10 +60,7 @@ if (ul.get("ID") == "" || ul.get("ID") == null) {
 
 }
 
-document.getElementById("xout").addEventListener("click", () => {
-    document.getElementById("pop").style.display = "none"
 
-})
 
 document.getElementById("gl").addEventListener("click", (e) => {
     navigator.clipboard.writeText(`${window.location.href.split('?')[0]}?ID=${window.id}`);
@@ -114,13 +111,3 @@ function chevn(ent) {
     }
 }
 
-function pop() {
-    document.getElementById('pop').style.display = 'block'
-
-}
-
-document.getElementById('chvn').addEventListener('click', () => {
-    chevn(document.getElementById('event').value)
-    document.getElementById('pop').style.display = 'none'
-
-})
