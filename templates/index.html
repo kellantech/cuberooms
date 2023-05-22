@@ -1,72 +1,54 @@
-
-    
 <noscript>
    <h1> This app requires JavaScript to run.<br>
-    Please enable JavaScript in the site settings</h1>
-    <style>
-        div{
-            display: none;
-        }
-    </style>
+      Please enable JavaScript in the site settings
+   </h1>
+   <style>
+      div{
+      display: none;
+      }
+   </style>
 </noscript>
 <div style="text-align:center;">
-<h1>CubeRooms</h1><br>
-<h3>Cube together, even at a distance</h3>
-
-<button id="o1" class="lb">join a room</button> 
-<button id="o2" class="lb">create a room</button>
-
-
+   <h1>CubeRooms</h1>
+   <br>
+   <h3>Cube together, even at a distance</h3>
+   <button id="o1" class="lb">join a room</button> 
+   <button id="o2" class="lb">create a room</button>
 </div>
-  <div class="b" id="b0">
-        <div class="p">
-            <button class="x" id="x0">&times;</button>
-            <div class="t">
-                <h1>Join a room</h1>
-                <form class="f" action="/room">
-                    <input name="ID" placeholder="room id" id="inid" class="inp">
-                    <input type="submit" value="join" class="subm">
-                </form>
-                
-            </div>
-
-        </div>
-        
-    </div>
-
-
-  <div class="b" id="b1">
-        <div class="p">
-            <button class="x" id="x1">&times;</button>
-            
-            <div class="t">
-                <h1>create a room</h1>
-                <form class="f2" action="/room">
-                <select name="event" id="event" class="inp">
-                    <option value="3x3">3x3</option>
-                    <option value="2x2">2x2</option>
-                    <option value="4x4">4x4</option>
-                    <option value="5x5">5x5</option>
-                    <option value="pyraminx">pyraminx</option>
-                    <option value="skewb">skewb</option>
-                    <option value="clock">clock</option>
-                    <option value="3bld">3bld</option>
-             <option value="megaminx">megaminx</option>
-
-                </select>
-                  
-                  <input name="new" style="display:none;" value="Y">
-
-                    <input type="submit" value="create" class="subm">
-                </form>
-            </div>
-
-        </div>
-        
-        
-    </div>
-
-
-
+<div class="b" id="b0">
+   <div class="p">
+      <button class="x" id="x0">&times;</button>
+      <div class="t">
+         <h1>Join a room</h1>
+         <form class="f" action="/room">
+            <input name="ID" placeholder="room id" id="inid" class="inp">
+            <input type="submit" value="join" class="subm">
+         </form>
+      </div>
+   </div>
+</div>
+<div class="b" id="b1">
+   <div class="p">
+      <button class="x" id="x1">&times;</button>
+      <div class="t">
+         <h1>create a room</h1>
+         <form class="f2" action="/room">
+            <select name="event" id="event" class="inp">
+               <option value="3x3">3x3</option>
+               <option value="2x2">2x2</option>
+               <option value="4x4">4x4</option>
+               <option value="5x5">5x5</option>
+               <option value="pyraminx">pyraminx</option>
+               <option value="skewb">skewb</option>
+               <option value="clock">clock</option>
+               <option value="3bld">3bld</option>
+               <option value="megaminx">megaminx</option>
+            </select>
+            <input name="new" style="display:none;" value="Y">
+            <input type="submit" value="create" class="subm">
+         </form>
+      </div>
+   </div>
+</div>
 <script src="/js/index.js"></script>
 <link rel="stylesheet" href="/css/index.css">
