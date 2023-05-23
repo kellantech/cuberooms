@@ -3,8 +3,8 @@
     Please enable JavaScript in the site settings</h1>
 </noscript>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/css/room.css">
 <h1 id="banner">CubeRooms</h1>
 <div class="footer"><a href="https://github.com/kellantech/cuberooms">Github</a><div id="footer"></div>
@@ -19,29 +19,6 @@
 
         
         
-<div id="pop">
-        <div class="p">
-            <button class="x" id="xout">&times;</button>
-            
-            <div class="t">
-                <h1>change event</h1>
-                <select name="event" id="event" class="dd">
-                    <option value="3x3">3x3</option>
-                    <option value="2x2">2x2</option>
-                    <option value="4x4">4x4</option>
-                    <option value="5x5">5x5</option>
-                    <option value="pyraminx">pyraminx</option>
-                    <option value="skewb">skewb</option>
-                    <option value="clock">clock</option>
-                    <option value="3bld">3bld</option>
-             <option value="megaminx">megaminx</option>
-
-                </select>
-                <button id='chvn' class='b'>change</button>							
-            </div>
-
-        </div>
-        </div>
 <script type="text/javascript" src="/js/room.js">
 </script>
 
@@ -50,9 +27,9 @@
 </form>
 
 <script>
-document.getElementById("f").addEventListener("submit", function(e) {
-	send(window.user_name,document.forms['f']['t'])
-        e.preventDefault();
+	document.getElementById("f").addEventListener("submit", function(e) {
+				send(window.user_name,document.forms['f']['t'])
+         e.preventDefault();
 });
 
 </script>
@@ -62,7 +39,26 @@ document.getElementById("f").addEventListener("submit", function(e) {
 <button onclick="send(window.user_name,document.forms['f']['t'])" class="b">send time</button>
 
 <button onclick="cl()" class="b">new round</button>
-<button onclick="pop()" class="b">change event</button>
+	
+<select name="event" id="event" class="dd">
+  <option value="3x3">3x3</option>
+  <option value="2x2">2x2</option>
+	<option value="4x4">4x4</option>
+  <option value="5x5">5x5</option>
+  <option value="pyraminx">pyraminx</option>
+  <option value="skewb">skewb</option>
+  <option value="clock">clock</option>
+  <option value="3bld">3bld</option>
+  <option value="megaminx">megaminx</option>
+	
+</select>
+<script>
+document.getElementById('event').onchange = ()=>{
+	chevn(document.getElementById('event').value)		
+}
+
+</script>
+	
 </div>
 
 <p id='out'>
