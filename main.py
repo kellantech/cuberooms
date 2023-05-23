@@ -31,12 +31,15 @@ def sevn(d):
 	i = int(d["id"])
 	evn = d["evn"]
 	clib.set_event(i,evn)
+	print('setEVN')
+	emit('change_event',json.dumps({"evn":evn,"rid":str(i)}),broadcast=True)
 
 @sapp.on("update")
 def handle_ge(data):
 	d = json.loads(data['data'])
 	d['id'] = str(d['id'])
 	clib.parse(d)
+	
 	
 	
 	emit("retupdate",[json.dumps(clib.get(int(d["id"]))),int(d["id"])], broadcast=True)
