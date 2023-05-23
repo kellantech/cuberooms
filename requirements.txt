@@ -1,0 +1,6 @@
+flask>=2.2.3
+python-engineio>=4.3.4
+flask-socketio>=5.3.2
+pybind11>=2.10.3
+cppimport>=22.8.2
+simple-websocket>=0.10.0
